@@ -6,10 +6,10 @@ const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoadi
             disabled={isLoading}
             onPress={handlePress}
             activeOpacity={0.7}
-            className={`bg-secondary rounded-xl min-h-[62px] justify-center items-center ${containerStyles} ${isLoading ? 'opacity-50' : ''}`}
+            className={`bg-secondary rounded-3xl justify-center items-center px-10 py-3.5 ${containerStyles} ${isLoading ? 'opacity-50' : ''}`}
         >
-            <Text className={`font-nunitosemibold text-lg text-primary ${textStyles}`}>
-                {title}
+            <Text className={`font-nunitosemibold text-base text-primary ${textStyles}`}>
+                {isLoading ? "Loading..." : title}
             </Text>
         </TouchableOpacity>
     )

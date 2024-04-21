@@ -1,9 +1,10 @@
 import { SplashScreen, Stack } from "expo-router"
 import { useFonts } from "expo-font"
 import { useEffect } from "react";
+import { Provider } from "react-redux";
+import { store } from "../redux/store/store";
 
 SplashScreen.preventAutoHideAsync();
-
 
 const RootLayout = () => {
     const [fontsLoaded, error] = useFonts({
@@ -33,9 +34,12 @@ const RootLayout = () => {
     if (!fontsLoaded && !error) return null;
 
     return (
-        <Stack>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
-        </Stack>
+        <Provider store={store}>
+            <Stack>
+                <Stack.Screen name="index" options={{ headerShown: false }} />
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            </Stack>
+        </Provider>
     )
 }
 
