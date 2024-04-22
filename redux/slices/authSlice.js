@@ -29,7 +29,7 @@ const AuthSlice = createSlice({
             state.isLoading = false;
             state.isLoggedIn = false;
             state.auth = null;
-            localStorage.clear();
+            AsyncStorage.clear();
         }
     }
 });
