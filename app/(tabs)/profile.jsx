@@ -37,17 +37,12 @@ const Profile = () => {
                     <View className="pt-6 gap-4">
                         <View className="flex-row items-center justify-between">
                             <Text className="font-nunitoregular text-gray-500 text-base">Phone number:</Text>
-                            <Text className="font-nunitosemibold text-blue-500 text-base">+998 {auth?.contactNumber}</Text>
+                            <Text className="font-nunitosemibold text-blue-500 text-base">+998 {auth?.phoneNumber}</Text>
                         </View>
 
                         <View className="flex-row items-center justify-between">
                             <Text className="font-nunitoregular text-gray-500 text-base">Date of birthday:</Text>
                             <Text className="font-nunitosemibold text-base">{auth?.dob}</Text>
-                        </View>
-
-                        <View className="flex-row items-center justify-between">
-                            <Text className="font-nunitoregular text-gray-500 text-base">Email address:</Text>
-                            <Text className="font-nunitosemibold text-base">{auth?.email}</Text>
                         </View>
 
                         <View className="w-16 items-center rounded bg-gray-200">
@@ -79,7 +74,7 @@ const Profile = () => {
 
                                 <View className="flex-row items-center justify-between">
                                     <Text className="font-nunitoregular text-gray-500 text-base">Phone number:</Text>
-                                    <Text className="font-nunitosemibold text-blue-300 text-base">{auth?.fatherContactNumber ? "+998 " + auth.fatherContactNumber : "-"}</Text>
+                                    <Text className="font-nunitosemibold text-blue-300 text-base">{auth?.fatherphoneNumber ? "+998 " + auth.fatherphoneNumber : "-"}</Text>
                                 </View>
 
                                 <View className="flex-row items-center justify-between">
@@ -89,7 +84,7 @@ const Profile = () => {
 
                                 <View className="flex-row items-center justify-between">
                                     <Text className="font-nunitoregular text-gray-500 text-base">Phone number:</Text>
-                                    <Text className="font-nunitosemibold text-blue-300 text-base">{auth?.motherContactNumber ? "+998 " + auth.motherContactNumber : "-"}</Text>
+                                    <Text className="font-nunitosemibold text-blue-300 text-base">{auth?.motherphoneNumber ? "+998 " + auth.motherphoneNumber : "-"}</Text>
                                 </View>
                             </View>
                         </> : <></>

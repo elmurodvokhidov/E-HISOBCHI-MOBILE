@@ -25,7 +25,7 @@ const Home = () => {
                     </View>
                 </View>
 
-                <View className="w-full items-start p-4 mt-6 rounded-md cursor-pointer bg-white shadow-md">
+                <View className="w-full items-start p-4 mt-6 rounded-md cursor-pointer bg-white shadow-sm">
                     <View className="text-xs font-nunitomedium rounded px-2 py-1 bg-gray-200">
                         <Text>{auth?.group?.name}</Text>
                     </View>

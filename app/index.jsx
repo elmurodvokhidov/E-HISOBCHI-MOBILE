@@ -29,7 +29,7 @@ export default function App() {
     const [showPassword, setShowPassword] = useState(false);
     const [token, setToken] = useState(null);
     const [authCred, setAuthCred] = useState({
-        email: "",
+        phoneNumber: "",
         password: "",
         huru: "student",
     });
@@ -58,7 +58,7 @@ export default function App() {
     const signHandler = async () => {
         dispatch(authStart());
         try {
-            if (authCred.huru !== "" && authCred.email !== "" && authCred.password !== "") {
+            if (authCred.huru !== "" && authCred.phoneNumber !== "" && authCred.password !== "") {
                 const { data } = await AuthService.studentLogin(authCred);
                 AsyncStorage.setItem("x-token", data.token);
                 dispatch(authSuccess(data));
@@ -96,18 +96,25 @@ export default function App() {
                             resizeMode='cover'
                         />
 
-                        {/* Email Field */}
+                        {/* Phone Number Field */}
                         <View className="space-y-2 relative mt-10">
                             <Text className="absolute text-sm -top-0.5 font-medium left-3 z-10 text-gray-500 bg-white">
-                                <Text>Email</Text>
+                                <Text>Telefon</Text>
                                 <Text className="text-cyan-600 ml-1">*</Text>
                             </Text>
-                            <TextInput
-                                className="w-full h-12 px-2 rounded border text-base font-nunitoregular border-gray-300 focus:border-cyan-600"
-                                value={authCred.email}
-                                onChangeText={(e) => setAuthCred({ ...authCred, email: e })}
-                                autoCapitalize="none"
-                            />
+                            <View className="flex-row">
+                                <TextInput
+                                    className="w-1/4 h-12 items-center text-base border border-r-0 border-gray-300 rounded-l px-3 pb-2"
+                                    value="+998"
+                                    editable={false}
+                                />
+                                <TextInput
+                                    className="w-3/4 h-12 px-2 rounded rounded-l-none border text-base font-nunitoregular border-gray-300 focus:border-cyan-600"
+                                    value={authCred.phoneNumber}
+                                    onChangeText={(e) => setAuthCred({ ...authCred, phoneNumber: e })}
+                                    keyboardType='numeric'
+                                />
+                            </View>
                         </View>
 
                         {/* Password Field */}

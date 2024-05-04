@@ -15,6 +15,7 @@ import {
     courseStart,
     getCourseSuccess
 } from '../../redux/slices/courseSlice';
+import Skeleton from '../../components/Skeleton';
 
 const Courses = () => {
     const { auth } = useSelector(state => state.auth);
@@ -40,36 +41,47 @@ const Courses = () => {
     return (
         <SafeAreaView>
             <ScrollView className="h-full pt-6 px-4">
-                <View className="w-full shadow-md overflow-hidden rounded bg-white">
-                    <View className={`items-center justify-center gap-8 relative pt-14`} style={{ backgroundColor: course?.color }}>
-                        <Text className="text-base font-bold text-white">{course?.title}</Text>
-                        <View className="w-48">
-                            <Image
-                                className="w-full h-20"
-                                source={coursebg}
-                                resizeMode='contain'
-                            />
+                {
+                    course ? <>
+                        <View className="w-full shadow-sm overflow-hidden rounded bg-white">
+                            <View className={`items-center justify-center gap-8 relative pt-14`} style={{ backgroundColor: course?.color }}>
+                                <Text className="text-base font-bold text-white">{course?.title}</Text>
+                                <View className="w-48">
+                                    <Image
+                                        className="w-full h-20"
+                                        source={coursebg}
+                                        resizeMode='contain'
+                                    />
+                                </View>
+                            </View>
+                            <View className="gap-4 p-8">
+                                <View>
+                                    <Text className="text-xs text-gray-500">Description</Text>
+                                    <Text className="text-base text-black">{course?.description}</Text>
+                                </View>
+                                <View>
+                                    <Text className="text-xs text-gray-500">Price</Text>
+                                    <Text className="text-sm text-black">{course?.price} UZS</Text>
+                                </View>
+                                <View>
+                                    <Text className="text-xs text-gray-500">Course duration</Text>
+                                    <Text className="text-sm text-black">{course?.course_duration} oy</Text>
+                                </View>
+                                <View>
+                                    <Text className="text-xs text-gray-500">Lesson duration</Text>
+                                    <Text className="text-sm text-black">{course?.lesson_duration} daqiqa</Text>
+                                </View>
+                            </View>
                         </View>
-                    </View>
-                    <View className="gap-4 p-8">
-                        <View>
-                            <Text className="text-[12px] text-gray-500">Description</Text>
-                            <Text className="text-base text-black">{course?.description}</Text>
-                        </View>
-                        <View>
-                            <Text className="text-[12px] text-gray-500">Price</Text>
-                            <Text className="text-sm text-black">{course?.price} UZS</Text>
-                        </View>
-                        <View>
-                            <Text className="text-[12px] text-gray-500">Course duration</Text>
-                            <Text className="text-sm text-black">{course?.course_duration} oy</Text>
-                        </View>
-                        <View>
-                            <Text className="text-[12px] text-gray-500">Lesson duration</Text>
-                            <Text className="text-sm text-black">{course?.lesson_duration} daqiqa</Text>
-                        </View>
-                    </View>
-                </View>
+                    </> : <>
+                        <Skeleton
+                            parentWidth={100}
+                            firstChildWidth={85}
+                            secondChildWidth={50}
+                            thirdChildWidth={65}
+                        />
+                    </>
+                }
             </ScrollView>
         </SafeAreaView>
     )
