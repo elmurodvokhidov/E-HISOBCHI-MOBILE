@@ -1,6 +1,6 @@
-# 🚀 UITC-CRM-MOBILE Project
+# 🚀 E-HISOBCHI-MOBILE Project
 
-Welcome to the CRM Mobile Project repository! This project partially duplicates the [UITC-CRM-FRONTEND](https://github.com/elmurodvokhidov/UITC-CRM-FRONTEND)
+Welcome to the CRM Mobile Project repository! This project partially duplicates the [E-HISOBCHI-FRONTEND](https://github.com/elmurodvokhidov/E-HISOBCHI-FRONTEND)
  project, the project provides services for existing students. Those who do not have the opportunity or desire to use the web project can use this project on the Android or IOS operating system using this project. This is the current main goal of the project!
 
 ---
